@@ -19,25 +19,23 @@ namespace airbnb.Models
         [StringLength(50)]
         public string Address { get; set; }
 
-        [Required]
         [MaxLength(14)]
         [MinLength(14)]
         [Column(TypeName = "varchar(14)")]
         public string NID { get; set; }
 
-        /*[EmailAddress]
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
-        public string Password { get; set; }*/
 
         [Required]
-        public char Gender { get; set; }
+        [StringLength(25, MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
 
-        /*[ForeignKey("Place")]
-        public int PlaceId  { get; set; }
-        public virtual Place Place { get; set; }
-        public virtual Contract Contract { get; set; }*/
     }
 }

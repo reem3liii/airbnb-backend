@@ -10,6 +10,9 @@ namespace airbnb.Models
 
         [Required]
         public string Service { get; set; }
+
+        [Required]
+        public int Price { get; set; }
         public virtual Place Place { get; set; }
     }
 }

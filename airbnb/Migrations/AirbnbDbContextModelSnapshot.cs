@@ -60,14 +60,14 @@ namespace airbnb.Migrations
                     b.Property<DateTime>("DOB")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(1)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -75,9 +75,13 @@ namespace airbnb.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("NID")
-                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
                     b.HasKey("CustomerId");
 
@@ -110,17 +114,10 @@ namespace airbnb.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime>("DOB")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(1)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -128,9 +125,16 @@ namespace airbnb.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("NID")
-                        .IsRequired()
                         .HasMaxLength(14)
                         .HasColumnType("varchar(14)");
+
+                    b.Property<int>("ResponseRate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ResponseTime")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("OwnerId");
 
@@ -159,10 +163,10 @@ namespace airbnb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PlaceId"));
 
-                    b.Property<int>("Area")
+                    b.Property<int>("BathroomNumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("BathroomNumber")
+                    b.Property<int>("BedNumber")
                         .HasColumnType("int");
 
                     b.Property<int>("BedroomNumber")
@@ -174,12 +178,6 @@ namespace airbnb.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("KitchenNumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LivingroomNumber")
-                        .HasColumnType("int");
 
                     b.Property<string>("Location")
                         .IsRequired()
@@ -222,6 +220,9 @@ namespace airbnb.Migrations
                     b.Property<string>("Service")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
                     b.HasKey("PlaceId", "Service");
 
                     b.ToTable("Place_Service");
@@ -236,6 +237,12 @@ namespace airbnb.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ContractId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GuestsNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalPrice")
                         .HasColumnType("int");
 
                     b.HasKey("CustomerId", "PlaceId", "ContractId");

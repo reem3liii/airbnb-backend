@@ -20,27 +20,20 @@ namespace airbnb.Models
         public string Type { get; set; }
 
         [Required]
-        public int Area { get; set; }
-
-        [Required]
         public int DailyPrice { get; set; }
-
-        [Required]
-        public int LivingroomNumber { get; set; }
 
         [Required]
         public int BedroomNumber { get; set; }
 
         [Required]
-        public int BathroomNumber { get; set; }
+        public int BedNumber { get; set; }
 
         [Required]
-        public int KitchenNumber { get; set; }
+        public int BathroomNumber { get; set; }
 
         [ForeignKey("Owner")]
         public int OwnerId { get; set; }
         public virtual Owner Owner { get; set; }
         public virtual List<Review> Reviews { get; set; } = new List<Review>();
-        /*public virtual Customer Customer { get; set; }*/
     }
 }

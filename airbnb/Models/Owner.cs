@@ -16,20 +16,21 @@ namespace airbnb.Models
         [StringLength(20)]
         public string LastName { get; set; }
 
+        [Required]
+        public int ResponseRate { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        public string ResponseTime { get; set; }
+
         [StringLength(50)]
         public string Address { get; set; }
 
-        [Required]
         [MaxLength(14)]
         [MinLength(14)]
         [Column(TypeName = "varchar(14)")]
         public string NID { get; set; }
 
-        [Required]
-        public char Gender { get; set; }
-
-        [DataType(DataType.Date)]
-        public DateTime DOB { get; set; }
         public virtual List<Place> Places { get; set; } = new List<Place>();
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace airbnb.Models
 {
@@ -12,6 +13,12 @@ namespace airbnb.Models
 
         [ForeignKey("Contract")]
         public int ContractId { get; set; }
+
+        [Required]
+        public int GuestsNumber { get; set; }
+
+        [Required]
+        public int TotalPrice { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Place Place { get; set; }
         public virtual Contract Contract { get; set; }
