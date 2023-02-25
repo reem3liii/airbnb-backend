@@ -17,8 +17,6 @@ namespace airbnb.Models
         [Required]
         public int GuestsNumber { get; set; }
 
-        [Required]
-        public int TotalPrice { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Place Place { get; set; }
         public virtual Contract Contract { get; set; }
