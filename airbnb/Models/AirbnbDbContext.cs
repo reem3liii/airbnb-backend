@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using airbnb.Models;
 
 namespace airbnb.Models
 {
@@ -40,5 +41,10 @@ namespace airbnb.Models
                 a.HasKey(a => new { a.PlaceId, a.Service });
             });
         }
+        public DbSet<airbnb.Models.Customer_Phone> Customer_Phone { get; set; }
+        public DbSet<airbnb.Models.Place_Image> Place_Image { get; set; }
+        public DbSet<airbnb.Models.Place_Service> Place_Service { get; set; }
+        public DbSet<airbnb.Models.Rent> Rent { get; set; }
+        public DbSet<airbnb.Models.Owner_Phone> Owner_Phone { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace airbnb.Models
         public int PlaceId { get; set; }
 
         [Required]
-        public string ImageName { get; set; }
+        public string ImageSrc { get; set; }
         public virtual Place Place { get; set; }
     }
 }
