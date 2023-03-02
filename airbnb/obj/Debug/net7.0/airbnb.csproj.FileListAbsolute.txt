@@ -550,3 +550,5 @@ D:\iti\.GB\airbnb\airbnb\obj\Debug\net7.0\refint\airbnb.dll
 D:\iti\.GB\airbnb\airbnb\obj\Debug\net7.0\airbnb.pdb
 D:\iti\.GB\airbnb\airbnb\obj\Debug\net7.0\airbnb.genruntimeconfig.cache
 D:\iti\.GB\airbnb\airbnb\obj\Debug\net7.0\ref\airbnb.dll
+D:\iti\.GB\airbnb\airbnb\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\hp\Desktop\Graduation Project ITI\airbnb\airbnb\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
