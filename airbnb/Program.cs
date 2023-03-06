@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace airbnb
 {
@@ -36,7 +37,21 @@ namespace airbnb
             };
             });
 
+            builder.Services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("myPolicy",
+                builder =>
+                {
+                    builder.AllowAnyOrigin();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                });
+            });
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -49,6 +64,7 @@ namespace airbnb
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors("myPolicy");
 
             app.MapControllers();
 
